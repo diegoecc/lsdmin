@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTFF-8">
+	<meta name="viewport" content="width=device-width, user=scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
+	<title>Navegacion con tabs</title>
+	<link rel="stylesheet" href="estilos.css">
+	<link rel="stylesheet" href="font-awesome.css">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="main.js"></script>
+</head>
+
+<body>
+	<div class="wrap">
+		<ul class="tabs">
+			<li><a href="#tab1"><span class="fa fa-tachometer"></span><span class="tab-text">Hora vs Fecha</span></a></li>
+			<li><a href="#tab2"><span class="fa fa-database"></span><span class="tab-text">Hora vs Minuto</span></a></li>
+		</ul>
+
+		<div class ="secciones">
+		
+		<article id = "tab1">
+				
+		<center><h1><a name="Titulo" id="SimpleExample"></a>Audiencia TVGO Live Perú de lunes a viernes </h1></center>
+
+		</br>
+		</br>
+		</br>
+		<u><h2><a name="Titulo1" id="SimpleExample1"></a>Tabla Hora vs Fecha</h2></u>
+  
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Hora', 'Total', 'App',  'Desktop',  'MobileWeb'],
+          ['00:00',  966,     580,     362,     25],
+          ['01:00',  529,     369,     151,     8],
+          ['02:00',  370,     273,     93,      4],
+          ['03:00',  298,     227,     67,      4],
+          ['04:00',  273,     210,     59,      4],
+          ['05:00',  421,     299,     108,     13],
+          ['06:00',  949,     581,     323,     46],
+          ['07:00',  1278,    715,     509,     54],
+          ['08:00',  1320,    689,     580,     52],
+          ['09:00',  1219,    628,     551,     41],
+          ['10:00',  1113,    595,     476,     42],
+          ['11:00',  1305,    686,     562,     57],
+          ['12:00',  1193,    593,     567,     34],
+          ['13:00',  1512,    712,     742,     58],
+          ['14:00',  1622,    748,     813,     60],
+          ['15:00',  1537,    720,     760,     58],
+          ['16:00',  1312,    677,     591,     44],
+          ['17:00',  1292,    643,     605,     44],
+          ['18:00',  1930,    826,     1022,    81],
+          ['19:00',  3662,    1523,    1924,    215],
+          ['20:00',  4231,    1709,    2305,    217],
+          ['21:00',  4585,    1956,    2356,    273],
+          ['22:00',  3849,    1787,    1835,    227],
+          ['23:00',  1671,    886,     742,     43]
+        ]);
+
+        var options = {
+          title: 'PROMEDIO USUARIOS - HORA POR PLATAFORMA',
+          curveType: 'function',
+          legend: { position: 'bottom left' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: automatic; height: automatic"></div>
+  </body>
+
+		</article>
+
+		<article id = "tab2">
+			<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Maximo (Hora)',  'Total'],
+          ['00:00',  1933],
+          ['01:00',  1004],
+          ['02:00',  681],
+          ['03:00',  518],
+          ['04:00',  427],
+          ['05:00',  832],
+          ['06:00',  1560],
+          ['07:00',  1829],
+          ['08:00',  2169],
+          ['09:00',  2159],
+          ['10:00',  2069],
+          ['11:00',  2199],
+          ['12:00',  2189],
+          ['13:00',  2911],
+          ['14:00',  3367],
+          ['15:00',  3628],
+          ['16:00',  2492],
+          ['17:00',  2171],
+          ['18:00',  3948],
+          ['19:00',  6847],
+          ['20:00',  8477],
+          ['21:00',  9013],
+          ['22:00',  8855],
+          ['23:00',  3273]
+        ]);
+
+        var options = {
+          title: 'MAXIMO USUARIOS TOTALES POR HORA',
+        };
+
+        var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: automatic; height: automatic;"></div>
+  </body>
+
+  		</article>
+	</div>
+
+</body>
+
+</html>
